@@ -9,12 +9,15 @@ public abstract class Conta implements IConta {
     protected int agencia;
     protected int numero;
     protected double saldo;
-    private Cliente cliente;
+    protected boolean ativa = true;
+    protected boolean administrador = false;
+    protected Cliente cliente;
 
-    public Conta(Cliente cliente){
+    public Conta(Cliente cliente, boolean administrador) {
         this.agencia = AGENCIA_PADRAO;
         this.numero = SEQUENCIAL++;
         this.cliente = cliente;
+        this.administrador = administrador;
     }
 
     @Override
@@ -51,4 +54,5 @@ public abstract class Conta implements IConta {
     public double getSaldo() {
         return saldo;
     }
+
 }

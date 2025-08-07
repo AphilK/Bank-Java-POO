@@ -3,8 +3,8 @@
 import org.aphilk.model.cliente.Cliente;
 
 public class ContaPoupança extends Conta {
-    public ContaPoupança(Cliente cliente) {
-        super(cliente);
+    public ContaPoupança(Cliente cliente, boolean administrador) {
+        super(cliente, administrador);
     }
 
     @Override

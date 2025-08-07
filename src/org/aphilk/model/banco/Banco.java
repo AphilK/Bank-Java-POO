@@ -4,14 +4,22 @@ import java.util.List;
 import org.aphilk.model.conta.Conta;
 
 public class Banco {
-    private String nome;
     private List<Conta> contas;
 
-    public String getNome() {
-        return nome;
+    public List<Conta> getContas() {
+        return contas;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void adicionarConta(Conta conta) {
+        this.contas.add(conta);
+    }
+
+    public Conta buscarContaPorNumero(int numeroConta) {
+        for (Conta conta : contas) {
+            if (conta.getNumero() == numeroConta) {
+                return conta;
+            }
+        }
+        return null;
     }
 }
