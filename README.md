@@ -1,18 +1,70 @@
-## Getting Started
+# Banco Digital Java - Desafio DIO
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Este projeto é resultado de um desafio da [Digital Innovation One (DIO)](https://www.dio.me/) para criar um **banco digital** utilizando Java e os princípios de **Programação Orientada a Objetos (POO)**.
 
-## Folder Structure
+## Objetivo
 
-The workspace contains two folders by default, where:
+Desenvolver um sistema bancário simples, com funcionalidades de criação de contas, autenticação de clientes, operações bancárias básicas e gerenciamento de contas, aplicando conceitos fundamentais de POO como abstração, encapsulamento, herança e polimorfismo.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## Funcionalidades
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+- **Criação de contas** (Corrente e Poupança)
+- **Cadastro de clientes** com nome, CPF e senha
+- **Autenticação** de acesso à conta
+- **Depósito, saque e transferência** entre contas
+- **Visualização de extrato**
+- **Gerenciamento de contas** pelo banco
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+## Estrutura do Projeto
 
-## Dependency Management
+```
+src/
+└── org/aphilk/
+    ├── model/
+    │   ├── banco/
+    │   │   └── Banco.java
+    │   ├── cliente/
+    │   │   └── Cliente.java
+    │   └── conta/
+    │       ├── Conta.java
+    │       ├── ContaCorrente.java
+    │       ├── ContaPoupança.java
+    │       └── IConta.java
+    └── view/
+        └── App.java
+```
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+- **Banco**: Gerencia as contas cadastradas.
+- **Cliente**: Representa o usuário do banco.
+- **Conta**: Classe abstrata base para contas bancárias.
+- **ContaCorrente/ContaPoupança**: Especializações de Conta.
+- **IConta**: Interface com operações bancárias.
+- **App**: Interface de linha de comando para interação com o usuário.
+
+## Como Executar
+
+1. **Compile o projeto** (os arquivos `.class` serão gerados em `bin/`):
+
+   ```sh
+   javac -d bin src/org/aphilk/**/*.java
+   ```
+
+2. **Execute a aplicação**:
+
+   ```sh
+   java -cp bin org.aphilk.view.App
+   ```
+
+## Tecnologias Utilizadas
+
+- Java 8+
+- Orientação a Objetos
+- Terminal/Console
+
+## Sobre o Desafio
+
+O desafio propõe a criação de um banco digital com operações básicas, reforçando o uso de boas práticas de POO e a estruturação de projetos Java.
+
+---
+
+Desenvolvido por **AphilK** para o bootcamp da DIO.
